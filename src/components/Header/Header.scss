@@ -1,0 +1,31 @@
+.header {
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    &__left {
+        &__logo {
+            width: 2rem;
+        }
+    }
+    &__right {
+        display: flex;
+        &__search {
+            &__box {
+                background-image: Url('../../assets/images/search.svg');
+                background-position: left center;
+                background-repeat: no-repeat; 
+                padding-left: 20px;
+            }
+        }
+        &__upload {
+            display: flex;
+            &__button {
+                display:flex;
+            }
+            &__user {
+                display:flex;
+            }
+        }
+    }
+}

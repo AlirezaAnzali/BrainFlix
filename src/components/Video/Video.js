@@ -1,13 +1,14 @@
 import "./Video.scss";
 import scrubbingIcon from "../../assets/images/scrub.svg"
 
-function Video({ currentVideo }) {
+function Video({ getVideoDetails }) {
+  const { video, image, duration } = getVideoDetails();
   return (
     <div className="video">
       <video
         className="video__video"
-        src={currentVideo.video}
-        poster={currentVideo.image}
+        src={video}
+        poster={image}
       ></video>
       <div className="video__controls">
         <button className="video__controls__play video__controls__button"></button>
@@ -24,7 +25,7 @@ function Video({ currentVideo }) {
             </div>
           </div>
           <span className="video__controls__progress__time">
-            0:00 / {currentVideo.duration}
+            0:00 / {duration}
           </span>
         </div>
         <div className="video__controls__button">

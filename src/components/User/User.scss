@@ -1,7 +1,18 @@
+@use "../../styles/partials/general" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
 .user {
+    margin: 1.2rem 1rem 0 0;
+    height: 2.25rem;
     width: 2.25rem;
     border-radius: 50%;
-    background-image: url("../../assets/images/Mohan-muruge.jpg");
-    background-position: center;
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-position:bottom;
     background-size: cover;
+    @include tablet {
+        height: 3rem;
+        width: 3rem;
+    }
 }

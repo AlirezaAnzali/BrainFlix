@@ -28,27 +28,21 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Video
-        getVideoDetails={getVideoDetails}
-      />
-      <section className="left">
-        <VideoDescription
-          getVideoDetails={getVideoDetails}
-        />
-        <Conversation
-          getVideoDetails={getVideoDetails}
-        />
-        <Comments
-          getVideoDetails={getVideoDetails}
-        />
-      </section>
-      <section className="right">
-        <NextVideos
-          currentVideo={currentVideo}
-          setCurrentVideo={setCurrentVideo}
-          videoData={videoData}
-          displayVideo={displayVideo}
-        />
+      <Video getVideoDetails={getVideoDetails} />
+      <section className="bottom">
+        <section className="left">
+          <VideoDescription getVideoDetails={getVideoDetails} />
+          <Conversation getVideoDetails={getVideoDetails} />
+          <Comments getVideoDetails={getVideoDetails} />
+        </section>
+        <section className="right">
+          <NextVideos
+            currentVideo={currentVideo}
+            setCurrentVideo={setCurrentVideo}
+            videoData={videoData}
+            displayVideo={displayVideo}
+          />
+        </section>
       </section>
     </div>
   );

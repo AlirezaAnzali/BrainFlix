@@ -19,12 +19,6 @@ body {
   @include regular;
 }
 
-.label {
-  margin-bottom: 1rem;
-  @include regular;
-  color: $Silver;
-}
-
 
 .invalid {
     border: 0.125rem solid #D22D2D;

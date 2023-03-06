@@ -10,3 +10,13 @@
         flex-direction: row;
     }
 }
+.left {
+    @include desktop {
+        width: 65%;
+    }
+}
+.right {
+    @include desktop {
+        width: 35%;
+    }
+}

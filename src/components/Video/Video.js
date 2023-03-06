@@ -5,14 +5,10 @@ function Video({ getVideoDetails }) {
   const { video, image, duration } = getVideoDetails();
   return (
     <div className="video">
-      <video
-        className="video__video"
-        src={video}
-        poster={image}
-      ></video>
+      <video className="video__video" src={video} poster={image}></video>
       <div className="video__controls">
-        <button className="video__controls__play video__controls__button"></button>
-        <div className="video__controls__progress video__controls__button">
+        <div className="video__controls__play"></div>
+        <div className="video__controls__progress">
           <div className="video__controls__progress__progress">
             <div className="video__controls__progress__buffer"></div>
             <div className="video__controls__progress__played"></div>
@@ -25,12 +21,12 @@ function Video({ getVideoDetails }) {
             </div>
           </div>
           <span className="video__controls__progress__time">
-            0:00 / {duration}
+            0:00/{duration}
           </span>
         </div>
-        <div className="video__controls__button">
-          <button className="video__controls__fullscreen video__controls__button"></button>
-          <button className="video__controls__mute video__controls__button"></button>
+        <div className="video__controls__right">
+          <div className="video__controls__right__fullscreen"></div>
+          <div className="video__controls__right__mute"></div>
         </div>
       </div>
     </div>

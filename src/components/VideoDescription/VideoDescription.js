@@ -19,23 +19,27 @@ function VideoDescription({ getVideoDetails }) {
         <h1 className="title__name">{title}</h1>
       </div>
       <div className="details">
-        <div className="details_left">
+        <div className="details__left">
           <p className="details__left__channel">By {channel}</p>
           <span className="details__left__time">{formattedDate}</span>
         </div>
-        <div className="details_right">
-          <img
-            className="details__right__views--image"
-            src={viewsIcon}
-            alt="views icon"
-          />{" "}
-          <span className="details__right__views">{views}</span>
-          <img
-            className="details__right__likes--image"
-            src={likesIcon}
-            alt="likes icon"
-          />{" "}
-          <span className="details__right__likes">{likes}</span>
+        <div className="details__right">
+          <div className="details__right__view">
+            <img
+              className="details__right__view__image"
+              src={viewsIcon}
+              alt="views icon"
+            />{" "}
+            <span className="details__right__view__views">{views}</span>
+          </div>
+          <div className="details__right__like">
+            <img
+              className="details__right__like__image"
+              src={likesIcon}
+              alt="likes icon"
+            />{" "}
+            <span className="details__right__like__likes">{likes}</span>
+          </div>
         </div>
       </div>
       <div className="description">

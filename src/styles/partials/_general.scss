@@ -25,17 +25,6 @@ body {
   color: $Silver;
 }
 
-.box {
-  border: 0.125rem solid $Mercury;
-  border-radius: 0.25rem;
-  width: 100%;
-  background-color: $Alabaster;
-  color: $BrainFlix-DarkBlack;
-  @include regular;
-  &:focus {
-    border: 0.125rem solid $BrainFlix-DarkBlack;
-  }
-}
 
 .invalid {
     border: 0.125rem solid #D22D2D;
@@ -44,15 +33,4 @@ body {
     }
 }
 
-.button {
-    height: 2.5rem;
-    color: $White;
-    background-color: $BrainFlix-Blue;
-    border-radius: .25rem;
-    border: none;
-    @include regular;
-    &:hover {
-        background-color: $BrainFlix-DarkBlue;
-    }
-}
 

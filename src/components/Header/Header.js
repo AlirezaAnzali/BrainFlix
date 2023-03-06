@@ -1,6 +1,5 @@
 import "./Header.scss"
 import User from "../User/User";
-import UploadButton from "../UploadButton/UploadButton";
 import logo from "../../assets/images/BrainFlix-logo.svg";
 
 function Header () {
@@ -24,8 +23,8 @@ function Header () {
             <User />
           </div>
           <div className="header__right__upload">
-            <UploadButton className="header__right__upload__button" />
-            <User className="header__right__upload__user" />
+            <button className="header__right__upload__button">UPLOAD</button>
+            <User />
           </div>
         </div>
       </header>

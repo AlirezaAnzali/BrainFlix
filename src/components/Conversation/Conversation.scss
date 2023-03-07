@@ -30,7 +30,8 @@
             padding-bottom: 1.5rem;
         }
         @include desktop {
-            margin: 1rem 1rem 1rem 8rem;
+            margin: 1rem 0rem 1rem 8rem;
+            padding-right: 1rem;
         }
         &__avatar {
             display: flex;

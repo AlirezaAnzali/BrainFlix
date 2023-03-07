@@ -6,13 +6,12 @@
 .comments {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
-    margin-top: 0;
+    margin:0 1rem;
     @include tablet {
         margin: 1rem 2.25rem;
     }
     @include desktop {
-        margin: 1rem 1rem 1rem 8rem;
+        margin: 1rem 0rem 1rem 8rem;
     }
     &__comment {
         margin-top: 1rem;
@@ -35,6 +34,9 @@
             display: flex;
             flex-direction: column;
             width: 100%;
+            @include desktop {
+                padding-right: 1rem;
+            }
             &__name {
                 display: flex;
                 justify-content: space-between;

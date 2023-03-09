@@ -1,0 +1,23 @@
+@use "../../styles/partials/general" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+        flex-direction: row;
+    }
+}
+.left {
+    @include desktop {
+        width: 65%;
+    }
+}
+.right {
+    @include desktop {
+        width: 35%;
+        border-left: .125rem solid $Mercury;
+    }
+}

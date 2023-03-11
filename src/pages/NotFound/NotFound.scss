@@ -5,25 +5,60 @@
 
 
 .not-found {
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  &__title {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    @include bold;
-    color:$BrainFlix-DarkBlue;
+  align-items: center;
+  &__image {
+    width: 100%;
+    @include tablet {
+      width: 60%;
+    }
+    @include desktop {
+      width: 50%;
+    }
   }
   &__text {
-    font-size: 1.5rem;
-    margin: 1rem;
+    margin: 0 0 1rem 0;
     text-align: center;
     @include regular;
     color: $BrainFlix-Black;
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    @include tablet {
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+    @include desktop {
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+  }
+  &__button {
+    width: 100%;
+    height: 2.5rem;
+    color: $White;
+    background-color: $BrainFlix-Blue;
+    border-radius: .25rem;
+    border: none;
+    @include regular;
+    @include tablet {
+        width: 15rem;
+        padding: 0 1rem;
+        margin: 0 1rem;
+    }
+    &:hover {
+    background-color: $BrainFlix-DarkBlue;
+    }
+    & > *:first-child {
+        color: inherit;
+        text-decoration: none;
+    }
   }
 }
+
 
 
 

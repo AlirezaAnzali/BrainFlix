@@ -25,10 +25,8 @@ function Header () {
             />
             <User />
           </div>
-          <div className="header__right__upload">
-            <Link to="/upload">
-              <button className="header__right__upload__button">UPLOAD</button>
-            </Link>
+          <div className="header__right__upload"> 
+            <button className="header__right__upload__button"><Link to="/upload">UPLOAD</Link></button>
             <User />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import "./Home.scss";
+import Header from "../../components/Header/Header";
 import Video from "../../components/Video/Video";
 import VideoDescription from "../../components/VideoDescription/VideoDescription";
 import Conversation from "../../components/Conversation/Conversation";
@@ -26,6 +27,7 @@ function Home() {
 
   return (
     <div className="Home">
+      <Header />
       <Video getVideoDetails={getVideoDetails} />
       <section className="bottom">
         <section className="left">

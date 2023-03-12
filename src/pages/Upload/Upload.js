@@ -72,7 +72,11 @@ function Upload() {
           >
             CANCEL
           </span>
-          <button className="page__upload__buttons__publish" type="submit">
+          <button
+            onClick={handleSubmit}
+            className="page__upload__buttons__publish"
+            type="submit"
+          >
             PUBLISH
           </button>
           <span

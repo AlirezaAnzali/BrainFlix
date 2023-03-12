@@ -12,9 +12,11 @@ function NotFound() {
           We're sorry, but the page you requested could not be found.
         </p>
         <p className="not-found__text">Please check the URL and try again.</p>
-        <button className="not-found__button">
-          <Link to="/">GO BACK TO THE HOME PAGE</Link>
-        </button>
+        <Link to="/">
+          <button className="not-found__button">
+            GO BACK TO THE HOME PAGE
+          </button>
+        </Link>
       </div>
     </div>
   );

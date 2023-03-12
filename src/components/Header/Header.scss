@@ -81,6 +81,15 @@
             @include tablet {
                 align-items: center;
             }
+            & > *:first-child {
+                color: inherit;
+                text-decoration: none;
+                width: 100%;
+                @include tablet {
+                    width: 9.375rem;
+                    margin: 0 1rem;
+                }
+            }
             &__button {
                 cursor: pointer;
                 width: 100%;
@@ -94,16 +103,12 @@
                 border: none;
                 @include regular;
                 @include tablet {
-                    width: 9.375rem;
+                    width: 100%;
                     padding: 0 2rem;
-                    margin: 0 1rem;
+                    margin: 0;
                 }
                 &:hover {
                 background-color: $BrainFlix-DarkBlue;
-                }
-                & > *:first-child {
-                    color: inherit;
-                    text-decoration: none;
                 }
             }
             & > *:last-child {

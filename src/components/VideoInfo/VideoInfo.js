@@ -1,7 +1,7 @@
 import "./VideoInfo.scss";
 
-const VideoInfo = ({ videoData, onClick }) => {
-  const { title, channel, image } = videoData;
+const VideoInfo = ({ videosData, onClick }) => {
+  const { title, channel, image } = videosData;
   return (
     <div className="info" onClick={onClick}>
       <div className="info__container">

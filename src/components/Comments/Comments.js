@@ -1,7 +1,7 @@
 import "./Comments.scss";
 
-function Comments({ getVideoDetails }) {
-  const { comments } = getVideoDetails();
+function Comments({ videoDetail }) {
+  const { comments } = videoDetail;
   return (
     <section className="comments">
       {comments.map((comment) => (

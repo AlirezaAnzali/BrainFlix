@@ -2,9 +2,9 @@ import "./VideoDescription.scss";
 import viewsIcon from "../../assets/images/views.svg"
 import likesIcon from "../../assets/images/likes.svg"
 
-function VideoDescription({ getVideoDetails }) {
+function VideoDescription({ videoDetail }) {
   const { timestamp, title, channel, views, likes, description } =
-    getVideoDetails();
+    videoDetail;
   const date = new Date(timestamp);
   const options = {
     timeZone: "UTC",

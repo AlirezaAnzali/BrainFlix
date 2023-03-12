@@ -5,43 +5,82 @@ import VideoDescription from "../../components/VideoDescription/VideoDescription
 import Conversation from "../../components/Conversation/Conversation";
 import Comments from "../../components/Comments/Comments";
 import NextVideos from "../../components/NextVideos/NextVideos";
-import { useState } from "react";
-import videoDetailsData from "../../data/video-details.json";
-import videoData from "../../data/videos.json";
+import { useState, useEffect } from "react";
+import { useParams, Navigate } from "react-router-dom";
+import { videosEndpoint } from "../../utils/api-utils";
+import { getVideoDetailEndpoint } from "../../utils/api-utils";
+import axios from "axios";
 
 function Home() {
-  const [currentVideo, setCurrentVideo] = useState(videoData[0]);
+  const { videoId } = useParams();
+  const [videos, setVideos] = useState(null);
+  const [videoDetail, setVideoDetail] = useState(null);
+  const [videoToDisplay, setVideoToDisplay] = useState(null);
+  const [error, setError] = useState(null);
 
-  function displayVideo(clickedVideoId) {
-    const newVideo = videoData.find((video) => video.id === clickedVideoId);
-    setCurrentVideo(newVideo);
+  useEffect(() => {
+    axios
+      .get(videosEndpoint)
+      .then(({ data }) => {
+        setVideos(data);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!videos) {
+      return;
+    }
+    const selectedVideoId = videoId || (videos && videos[0].id);
+    const selectedVideoToDisplay =
+      videos && videos.find((video) => video.id === selectedVideoId);
+    if (!selectedVideoToDisplay) {
+      setError(404);
+      return;
+    }
+    setVideoToDisplay(selectedVideoToDisplay);
+    const videoDetailEndpoint = getVideoDetailEndpoint(
+      selectedVideoToDisplay.id
+    );
+    axios
+      .get(videoDetailEndpoint)
+      .then(({ data }) => {
+        setVideoDetail(data);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  }, [videos, videoId]);
+
+  if (error) {
+    if (error === 404) {
+      return <Navigate to="/not-found" />;
+    }
+    return <h1>Error from api</h1>;
   }
-
-  function getVideoDetails() {
-    const currentVideoId = currentVideo.id;
-    const currentVideoDetails = videoDetailsData.find((videoDetail) => {
-      return videoDetail.id === currentVideoId;
-    });
-    return currentVideoDetails;
+  if (!videos || !videoDetail) {
+    return (
+      <div className="container">
+        <h1>LOADING...</h1>
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   return (
     <div className="Home">
       <Header />
-      <Video getVideoDetails={getVideoDetails} />
+      <Video videoDetail={videoDetail} />
       <section className="bottom">
         <section className="left">
-          <VideoDescription getVideoDetails={getVideoDetails} />
-          <Conversation getVideoDetails={getVideoDetails} />
-          <Comments getVideoDetails={getVideoDetails} />
+          <VideoDescription videoDetail={videoDetail} />
+          <Conversation videoDetail={videoDetail} />
+          <Comments videoDetail={videoDetail} />
         </section>
         <section className="right">
-          <NextVideos
-            currentVideo={currentVideo}
-            setCurrentVideo={setCurrentVideo}
-            videoData={videoData}
-            displayVideo={displayVideo}
-          />
+          <NextVideos videoToDisplay={videoToDisplay} videosData={videos} />
         </section>
       </section>
     </div>

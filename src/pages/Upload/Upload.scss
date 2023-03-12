@@ -116,6 +116,7 @@
             }
         }
         &__publish {
+            cursor: pointer;
             margin-top: 0.5rem;
             width: 100%;
             background-image: Url('../../assets/images/publish.svg');
@@ -161,6 +162,10 @@
     }
 }
 
+.box:focus {
+    border: 0.125rem solid $BrainFlix-Blue;
+}
+
 
 .label {
     color: $Silver;
@@ -180,7 +185,7 @@
 
 .last {
     display: flex;
-    margin-top: 2.5rem;
+    margin: 2.5rem 0;
     @include tablet {
         display: none;
     }

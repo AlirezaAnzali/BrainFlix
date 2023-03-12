@@ -5,13 +5,13 @@ import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/upload" element={<Upload />} />
-        <Route path="*" element= {<NotFound />}/>
+        <Route path="/video/:videoId" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

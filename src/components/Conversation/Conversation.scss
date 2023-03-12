@@ -24,7 +24,7 @@
         display: flex;
         margin: 1rem;
         padding-bottom: 1rem;
-        border-bottom: .1875rem solid $Mercury;
+        border-bottom: .125rem solid $Mercury;
         @include tablet {
             margin: 1rem 2.25rem;
             padding-bottom: 1.5rem;
@@ -95,6 +95,7 @@
                 flex-direction: column;
                 display: flex;
                 &__button {
+                    cursor: pointer;
                     width: 100%;
                     background-image: Url('../../assets/images/add_comment.svg');
                     background-position: .5rem center;

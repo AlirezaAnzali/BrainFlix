@@ -26,7 +26,7 @@ function Header () {
             <User />
           </div>
           <div className="header__right__upload"> 
-            <button className="header__right__upload__button"><Link to="/upload">UPLOAD</Link></button>
+            <Link to="/upload"><button className="header__right__upload__button">UPLOAD</button></Link>
             <User />
           </div>
         </div>

@@ -1,25 +1,25 @@
 import "./NextVideos.scss";
 import VideoInfo from "../VideoInfo/VideoInfo";
+import { Link } from "react-router-dom";
 
-function NextVideos({ currentVideo, videoData, displayVideo }) {
+function NextVideos({ videoToDisplay, videosData }) {
   return (
     <section className="videos">
       <p className="title">NEXT VIDEOS</p>
       <section className="list">
-        {videoData.map((item, index) => {
-          if (item.id !== currentVideo.id) {
+        {videosData.map((item) => {
+          if (item.id !== videoToDisplay.id) {
             return (
-              <VideoInfo
+              <Link
                 key={item.id}
-                videoData={item}
-                onClick={() => {
-                  displayVideo(item.id);
-                }}
+                to={`/video/${item.id}`}
                 className="list__div"
-              />
+              >
+                <VideoInfo key={item.id} videosData={item} />
+              </Link>
             );
           } else {
-            return <></>;
+            return null;
           }
         })}
       </section>

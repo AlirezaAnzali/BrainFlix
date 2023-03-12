@@ -1,8 +1,12 @@
 import "./Conversation.scss";
 import User from "../User/User";
 
-function Conversation({ getVideoDetails }) {
-  const { comments } = getVideoDetails();
+function Conversation({ videoDetail }) {
+  const { comments } = videoDetail;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // handle form submission
+  };
   return (
     <section className="conversation">
       <h2 className="conversation__title">{comments.length} Comments</h2>
@@ -34,6 +38,7 @@ function Conversation({ getVideoDetails }) {
               <p className="empty__text">empty</p>
             </div>
             <button
+              onClick={handleSubmit}
               type="submit"
               className="conversation__form__comment__button__button"
             >

@@ -1,8 +1,8 @@
 import "./Video.scss";
 import scrubbingIcon from "../../assets/images/scrub.svg"
 
-function Video({ getVideoDetails }) {
-  const { video, image, duration } = getVideoDetails();
+function Video({ videoDetail }) {
+  const { video, image, duration } = videoDetail;
   return (
     <div className="video">
       <video className="video__video" src={video} poster={image}></video>

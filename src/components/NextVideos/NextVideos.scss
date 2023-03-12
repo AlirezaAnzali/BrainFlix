@@ -10,7 +10,7 @@
         margin: 1rem 2.25rem;
     }
     @include desktop {
-        margin: 2rem 1rem;
+        margin: 2rem 8rem 2rem 1rem;
     }
 }
 .title {
@@ -21,4 +21,8 @@
     border: none;
     margin: 0;
     margin-bottom: 1rem;
+}
+
+.list__div {
+    @include reset-link;
 }

@@ -12,7 +12,7 @@ function NextVideos({ videoToDisplay, videosData }) {
             return (
               <Link
                 key={item.id}
-                to={`/video/${item.id}`}
+                to={`/videos/${item.id}`}
                 className="list__div"
               >
                 <VideoInfo key={item.id} videosData={item} />

@@ -1,11 +1,13 @@
 import Header from "../../components/Header/Header";
 import Thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Upload.scss"
 
 function Upload() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   const handleCancel = () => {
     setTitle("");
@@ -15,7 +17,11 @@ function Upload() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // handle form submission
+    alert("Your video is published successfully!");
+    navigate("/");
   };
+
+
   return (
     <div className="page">
       <Header />

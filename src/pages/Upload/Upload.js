@@ -2,9 +2,11 @@ import Header from "../../components/Header/Header";
 import Thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { videosEndpoint } from "../../utils/api-utils";
+import axios from "axios";
 import "./Upload.scss"
 
-function Upload() {
+function Upload({ setVideos }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
@@ -12,16 +14,26 @@ function Upload() {
   const handleCancel = () => {
     setTitle("");
     setDescription("");
+    navigate("/");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle form submission
-    alert("Your video is published successfully!");
-    navigate("/");
+    axios
+      .post(videosEndpoint, { title, description })
+      .then(() => {
+        alert("Your video is published successfully!");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(
+          "There was an error publishing your video. Please try again later."
+        );
+      });
   };
 
-
+  
   return (
     <div className="page">
       <Header />

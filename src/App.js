@@ -7,9 +7,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
+      {/* //Header is not here because I don't want it in my NotFound page//  */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/upload" element={<Upload />} />
+        <Route
+          path="/"
+          element={
+            <Home />
+          }
+        />
+        <Route
+          path="/upload"
+          element={<Upload />}
+        />
         <Route path="/videos/:videoId" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

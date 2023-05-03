@@ -27,19 +27,22 @@ Clone both [client side](https://github.com/AlirezaAnzali/BrainFlix)  and [serve
 1. You will need to have Node.js installed on your local machine.
 2. Install dependencies: Navigate to the cloned server side repository folder and install the necessary dependencies using npm install command in your terminal. This will install all the required packages specified in the package.json file:
 
-$ npm install
+    $ npm install
 
 
 3. Run the server by following command:
-$ node server.js
+
+    $ node index.js
 
 ### client side:
 1. Install dependencies: Navigate to the cloned client side repository folder and install the necessary dependencies using npm install command in your terminal. This will install all the required packages specified in the package.json file:
 
-$ npm install
+    $ npm install
 
 2. Run the client side by following command:
-$ npm start
+
+    $ npm start
+    
 After running the npm start command in the client side folder, the React development server will start up and you should be able to view the application in your browser.
 
 

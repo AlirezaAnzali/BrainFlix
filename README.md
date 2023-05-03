@@ -14,7 +14,7 @@ The project has the following features:
 
 - Pulling video data from API using Axios
 - Creating and displaying components using React
-- Creating server for keeping data using node.js and express
+- Creating server using node.js and express
 - Posting a video in upload page will automatically update the page with the new video.
 
 ## Installation
@@ -45,7 +45,7 @@ After running the npm start command in the client side folder, the React develop
 
 ## Preview
 
-![Brainflix Preview](./src/assets//assets/images/Animation.gif)
+![Brainflix Preview](Animation.gif)
 
 Open project and resize browser to see responsiveness across mobile, tablet, and desktop settings.
 

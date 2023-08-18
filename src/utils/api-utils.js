@@ -8,7 +8,7 @@
 
 
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://brainflix-backend-jdd1.onrender.com";
 export const videosEndpoint = `${API_URL}/videos`;
 export const getVideoDetailEndpoint = (videoId) => {
   return `${API_URL}/videos/${videoId}`;
